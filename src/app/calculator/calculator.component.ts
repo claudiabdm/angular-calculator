@@ -79,6 +79,7 @@ export class CalculatorComponent implements OnInit {
         this.displayNumber = `${this.numbers.reduce((a, b) => a * b)}`;
         break;
     }
+    this.displayNumber =  +this.displayNumber % 1 !== 0 ? (+this.displayNumber).toFixed(3).toString() : this.displayNumber;
     this.displayNumber = this.displayNumber.length > 8 ? 'Err' : this.displayNumber;
     this.numbers = [];
     this.displayAns = true;
