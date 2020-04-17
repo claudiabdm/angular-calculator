@@ -1,0 +1,80 @@
+@import '../../styles/mixins/mixins';
+@import '../../styles/global/variables';
+
+.calculator {
+  @include size(rem(320px), auto);
+
+  display: grid;
+  grid-template-columns: rem(320px);
+  grid-template-rows: auto max-content;
+  row-gap: rem(20px);
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Roboto', sans-serif;
+
+  &__display {
+    @include flex(flex-end, flex-end);
+
+    height: rem(85px);
+    max-width: rem(320px);
+    border: none;
+    background-color: transparent;
+    padding-right: rem(10px);
+    color: #fff;
+    font-size: 4rem;
+    text-align: end;
+    vertical-align: bottom;
+  }
+
+  &__btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: rem(20px);
+
+    .calculator__digit--equal {
+      grid-column: -1 / 4;
+    }
+
+  }
+
+
+}
+
+
+.btn {
+  @include flex(center, center);
+  @include size(rem(50px), rem(50px));
+
+  border-radius: 50%;
+  border: none;
+  background-color: var(--btn-bgc);
+  color: var(--btn-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  line-height: 0;
+  transition: background-color 0.25s linear;
+
+  &:focus {
+    background-color: var(--btn-active-bgc);
+    color: var(--btn-active-color);
+  }
+
+}
+
+.btn--operator {
+  --btn-bgc: #{$primary};
+  --btn-active-bgc: #fff;
+  --btn-active-color: #{$primary};
+}
+
+.btn--digit {
+  --btn-bgc: #{$grey-200};
+  --btn-color: #fff;
+  --btn-active-bgc: #{darken($grey-200, 25%)};
+  --btn-active-color: #fff;
+}

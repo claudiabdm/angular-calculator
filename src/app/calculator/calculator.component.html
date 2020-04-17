@@ -1,0 +1,47 @@
+<div class="calculator">
+
+
+  <input type="text" class="calculator__display" [(ngModel)]="displayNumber" readonly="true">
+
+  <div class="calculator__btns">
+    <button type="button" class="btn btn--format calculator__format" (click)="cleanDisplay()">AC</button>
+    <button type="button" class="btn btn--format calculator__format" (click)="onSign()">+/-</button>
+    <button type="button" class="btn btn--format calculator__format" (click)="onPercentage()">%</button>
+    <button type="button" class="btn btn--operator calculator__operator"
+      (click)="onOperator('divide')">&divide;</button>
+
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=7>7</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=8>8</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=9>9</button>
+    <button type="button" class="btn btn--operator calculator__operator"
+      (click)="onOperator('multiply')">&times;</button>
+
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=4>4</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=5>5</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=6>6</button>
+    <button type="button" class="btn btn--operator calculator__operator"
+      (click)="onOperator('substract')">&minus;</button>
+
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=1>1</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=2>2</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=3>3</button>
+    <button type="button" class="btn btn--operator calculator__operator" (click)="onOperator('add')">&#43;</button>
+
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onNumber($event.target.value)"
+      value=0>0</button>
+    <button type="button" class="btn btn--digit calculator__digit" (click)="onDecimal()">.</button>
+    <button type="button" class="btn btn--format calculator__format" (click)="cleanNumber()">C</button>
+    <button type="button" class="btn btn--operator calculator__operator calculator__digit--equal"
+      (click)="onEqual()">=</button>
+  </div>
+
+</div>
